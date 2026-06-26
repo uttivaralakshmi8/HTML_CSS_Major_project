@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Tasks 1-19 Solutions</title>
+  <style>
+    /* --- General Styles for Visibility --- */
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
+    h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 40px; }
+    .box { background: #3498db; color: white; padding: 20px; text-align: center; border-radius: 5px; border: 1px solid #2980b9;}
+    .container-border { border: 2px dashed #7f8c8d; padding: 10px; margin-bottom: 20px; background: white; }
+
+    /* =========================================
+       LEVEL 1: Basic Flexbox
+       ========================================= */
+    /* Task 1: Row, equal width, 20px gap */
+    .task-1 { display: flex; gap: 20px; }
+    .task-1 .box { flex: 1; }
+
+    /* Task 2: Navbar */
+    .task-2 { display: flex; justify-content: space-between; align-items: center; background: #2c3e50; color: white; padding: 10px 20px; }
+    .task-2-menu { display: flex; gap: 15px; }
+
+    /* Task 3 & 5: Cards & Pricing (Equal width row) */
+    .task-3 { display: flex; gap: 20px; }
+    .task-3 .card { flex: 1; background: white; padding: 15px; border: 1px solid #ddd; text-align: center; }
+
+    /* Task 4: Horizontal Gallery (Fixed width, equal spacing) */
+    .task-4 { display: flex; justify-content: space-between; }
+    .task-4 .box { width: 120px; height: 120px; flex: none; } /* flex: none prevents resizing */
+
+    /* =========================================
+       LEVEL 2: Flex Direction
+       ========================================= */
+    /* Task 6 & 8: Vertical stacking */
+    .task-6 { display: flex; flex-direction: column; gap: 15px; }
+
+    /* Task 7: Two Columns (Fixed Left, Fluid Right) */
+    .task-7 { display: flex; gap: 20px; }
+    .task-7 .menu { flex: 0 0 200px; background: #bdc3c7; padding: 20px; }
+    .task-7 .content { flex: 1; background: #ecf0f1; padding: 20px; }
+
+    /* =========================================
+       LEVEL 3 & 4: Justify & Align Items
+       ========================================= */
+    /* Task 9, 10, 11: Justify Content variations */
+    .task-9 { display: flex; justify-content: center; gap: 10px; }
+    .task-10 { display: flex; justify-content: space-between; }
+
+    /* Task 12 & 14: Perfect Centering */
+    .task-12 { display: flex; justify-content: center; align-items: center; height: 300px; background: #e0e0e0; }
+
+    /* Task 13: Align Items variations */
+    .task-13 { display: flex; align-items: center; gap: 10px; height: 250px; background: #eee; }
+    .task-13 .box:nth-child(1) { height: 100px; }
+    .task-13 .box:nth-child(2) { height: 150px; }
+    .task-13 .box:nth-child(3) { height: 80px; }
+    .task-13 .box:nth-child(4) { height: 200px; }
+
+    /* =========================================
+       LEVEL 5: Flex Wrap
+       ========================================= */
+    /* Task 15, 16, 17: Wrapping items */
+    .task-15 { display: flex; flex-wrap: wrap; gap: 10px; }
+    .task-15 .box { width: 150px; flex: none; }
+
+    /* =========================================
+       LEVEL 6: Grow, Shrink & Basis
+       ========================================= */
+    /* Task 18: Flex Grow Proportions */
+    .task-18 { display: flex; gap: 10px; }
+    .task-18 .box-1 { flex: 1; background: #e74c3c; }
+    .task-18 .box-2 { flex: 2; background: #f1c40f; }
+    .task-18 .box-3 { flex: 3; background: #2ecc71; }
+
+    /* Task 19: Flex Basis */
+    .task-19 { display: flex; gap: 10px; }
+    .task-19 .col-1 { flex-basis: 100px; }
+    .task-19 .col-2 { flex-basis: 200px; }
+    .task-19 .col-3 { flex-basis: 300px; }
+    .task-19 .col-4 { flex-basis: auto; flex-grow: 1; }
+  </style>
+</head>
+<body>
+
+  <h1>WFH-T1: Flexbox Solutions</h1>
+
+  <h2>Level 1: Basic Row (Task 1)</h2>
+  <div class="container-border task-1">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div>
+  </div>
+
+  <h2>Level 1: Navbar (Task 2)</h2>
+  <div class="task-2 container-border">
+    <div class="logo"><strong>LOGO</strong></div>
+    <div class="task-2-menu">
+      <span>Home</span><span>About</span><span>Services</span><span>Contact</span>
+    </div>
+  </div>
+
+  <h2>Level 2: Direction Column (Task 6)</h2>
+  <div class="container-border task-6">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+
+  <h2>Level 2: Two Columns (Task 7)</h2>
+  <div class="container-border task-7">
+    <div class="menu">Sidebar Menu</div>
+    <div class="content">Main Content Area</div>
+  </div>
+
+  <h2>Level 4: Perfect Center (Task 12 & 14)</h2>
+  <div class="container-border task-12">
+    <div class="box">Centered Login Card</div>
+  </div>
+
+  <h2>Level 5: Flex Wrap (Task 15)</h2>
+  <p>Resize your browser to see these wrap!</p>
+  <div class="container-border task-15">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div>
+    <div class="box">5</div><div class="box">6</div><div class="box">7</div><div class="box">8</div>
+  </div>
+
+  <h2>Level 6: Flex Grow Proportions (Task 18)</h2>
+  <div class="container-border task-18">
+    <div class="box box-1">flex: 1</div>
+    <div class="box box-2">flex: 2</div>
+    <div class="box box-3">flex: 3</div>
+  </div>
+
+</body>
+</html>
